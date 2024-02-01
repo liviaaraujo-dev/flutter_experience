@@ -1,5 +1,5 @@
 name: Json Rest Server
-port: 8080
+port: 3306
 host: 192.168.143.21
 database: database.json
 #Indica se você quer que inicie um servidor de socket junto com o servidor rest (true/false)
