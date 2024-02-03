@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 import 'package:dio/dio.dart';
 import 'package:fe_lab_clinicas_core/fe_lab_clinicas_core.dart';
+import 'package:fe_lab_clinicas_self_service/src/core/env.dart';
 import './user_repository.dart';
 
 class UserRepositoryImpl implements UserRepository {
@@ -12,7 +13,7 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<Either<AuthException, String>> login(String email, String password) async{
     try{
-      final Response(data: {'access_token': accessToken}) =  await restClient.unAuth.post('/auth', data: {
+      final Response(data: {'access_token': accessToken}) =  await restClient.unAuth.post('http://192.168.143.21:3306/auth', data: {
         'email': email,
         'password': password,
         'admin': true

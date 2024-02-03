@@ -24,7 +24,7 @@ class UserLoginServiceImpl implements UserLoginService {
       case Right(value: final accessToken):
         final sp = await SharedPreferences.getInstance();
         sp.setString(LocalStorageConstants.accessToken, accessToken.toString());
-        return Right(unit as ServiceException);
+        return Right(unit);
     }
   }
 }

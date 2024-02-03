@@ -12,7 +12,7 @@ class Left<L, R> extends Either<L, R>{
 }
 
 class Right<L, R> extends Either<L, R> {
-  final L value;
+  final R value;
 
   Right(this.value);
 }
